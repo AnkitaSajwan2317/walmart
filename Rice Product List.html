@@ -1,0 +1,375 @@
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+	<script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+	<script type="text/javascript">
+		window.tailwind.config = {
+			darkMode: ['class'],
+			theme: {
+				extend: {
+					colors: {
+						border: 'hsl(var(--border))',
+						input: 'hsl(var(--input))',
+						ring: 'hsl(var(--ring))',
+						background: 'hsl(var(--background))',
+						foreground: 'hsl(var(--foreground))',
+						primary: {
+							DEFAULT: 'hsl(var(--primary))',
+							foreground: 'hsl(var(--primary-foreground))'
+						},
+						secondary: {
+							DEFAULT: 'hsl(var(--secondary))',
+							foreground: 'hsl(var(--secondary-foreground))'
+						},
+						destructive: {
+							DEFAULT: 'hsl(var(--destructive))',
+							foreground: 'hsl(var(--destructive-foreground))'
+						},
+						muted: {
+							DEFAULT: 'hsl(var(--muted))',
+							foreground: 'hsl(var(--muted-foreground))'
+						},
+						accent: {
+							DEFAULT: 'hsl(var(--accent))',
+							foreground: 'hsl(var(--accent-foreground))'
+						},
+						popover: {
+							DEFAULT: 'hsl(var(--popover))',
+							foreground: 'hsl(var(--popover-foreground))'
+						},
+						card: {
+							DEFAULT: 'hsl(var(--card))',
+							foreground: 'hsl(var(--card-foreground))'
+						},
+					},
+				}
+			}
+		}
+	</script>
+	<style type="text/tailwindcss">
+		@layer base {
+				:root {
+					--background: 0 0% 100%;
+--foreground: 240 10% 3.9%;
+--card: 0 0% 100%;
+--card-foreground: 240 10% 3.9%;
+--popover: 0 0% 100%;
+--popover-foreground: 240 10% 3.9%;
+--primary: 240 5.9% 10%;
+--primary-foreground: 0 0% 98%;
+--secondary: 240 4.8% 95.9%;
+--secondary-foreground: 240 5.9% 10%;
+--muted: 240 4.8% 95.9%;
+--muted-foreground: 240 3.8% 46.1%;
+--accent: 240 4.8% 95.9%;
+--accent-foreground: 240 5.9% 10%;
+--destructive: 0 84.2% 60.2%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 5.9% 90%;
+--input: 240 5.9% 90%;
+--ring: 240 5.9% 10%;
+--radius: 0.5rem;
+				}
+				.dark {
+					--background: 240 10% 3.9%;
+--foreground: 0 0% 98%;
+--card: 240 10% 3.9%;
+--card-foreground: 0 0% 98%;
+--popover: 240 10% 3.9%;
+--popover-foreground: 0 0% 98%;
+--primary: 0 0% 98%;
+--primary-foreground: 240 5.9% 10%;
+--secondary: 240 3.7% 15.9%;
+--secondary-foreground: 0 0% 98%;
+--muted: 240 3.7% 15.9%;
+--muted-foreground: 240 5% 64.9%;
+--accent: 240 3.7% 15.9%;
+--accent-foreground: 0 0% 98%;
+--destructive: 0 62.8% 30.6%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 3.7% 15.9%;
+--input: 240 3.7% 15.9%;
+--ring: 240 4.9% 83.9%;
+				}
+			}
+		</style>
+</head>
+
+<body>
+	<header>
+		<div class="bg-blue-600 p-4 flex items-center justify-between space-x-4">
+			<div class="flex items-center space-x-4">
+				<img aria-hidden="true" alt="walmart-logo" src="Walmart.png" class="mr-2" />
+				<span class="text-white font-bold ">How do you want your items</span>
+				<select class="bg-white text-zinc-800 rounded p-1">
+					<option>New Delhi, India</option>
+					<option>Other Locations</option>
+				</select>
+			</div>
+			<div class="flex items-center flex-grow space-x-4">
+				<input type="text" placeholder="Search everything at Walmart online and in store"
+					class="bg-white text-zinc-800 rounded-l p-2 border border-zinc-300 w-full" />
+				<button class="bg-white rounded-r p-2 border border-zinc-300">
+					<img aria-hidden="true" alt="search-icon" src="https://openui.fly.dev/openui/24x24.svg?text=🔍" />
+				</button>
+			</div>
+			<div class="flex items-center space-x-4">
+				<button class="text-white">
+					<img aria-hidden="true" alt="reorder" src="https://openui.fly.dev/openui/24x24.svg?text=♻️" />
+					Reorder
+				</button>
+				<button class="text-white">
+					<img aria-hidden="true" alt="sign-in" src="https://openui.fly.dev/openui/24x24.svg?text=👤" />
+					Sign In
+				</button>
+				<button class="text-white">
+					<img aria-hidden="true" alt="cart" src="https://openui.fly.dev/openui/24x24.svg?text=🛒" />
+					Cart
+				</button>
+			</div>
+		</div>
+	</header>
+	<div class="bg-card p-4">
+		<div class="flex space-x-4">
+			<div class="relative">
+				<button class="bg-secondary text-secondary-foreground px-4 py-2 rounded-lg focus:outline-none">
+					Department ▼
+				</button>
+				<div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md hidden">
+
+				</div>
+			</div>
+			<div class="relative">
+				<button class="bg-secondary text-secondary-foreground px-4 py-2 rounded-lg focus:outline-none">
+					Services ▼
+				</button>
+				<div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md hidden">
+
+				</div>
+			</div>
+			<span class="text-muted-foreground space-x-6">|</span>
+			<a href="#" class="text-muted-foreground hover:text-primary">Fall Savings</a>
+			<a href="#" class="text-muted-foreground hover:text-primary">Grocery & Essentials</a>
+			<a href="#" class="text-muted-foreground hover:text-primary">New and Trending</a>
+			<a href="#" class="text-muted-foreground hover:text-primary">Back to School</a>
+			<a href="#" class="text-muted-foreground hover:text-primary">Baby</a>
+			<a href="#" class="text-muted-foreground hover:text-primary">Home</a>
+			<a href="#" class="text-muted-foreground hover:text-primary">Fashion</a>
+			<a href="#" class="text-muted-foreground hover:text-primary">Electronics</a>
+			<a href="#" class="text-muted-foreground hover:text-primary">Registry</a>
+		</div>
+	</div>
+	<div class="container mx-auto p-4">
+		<div class="bg-card p-4 rounded-lg shadow-md">
+			<p class="text-muted-foreground">You searched for:</p>
+			<h2 class="text-primary font-semibold">Rice, Tea, Biscuits and Hand Cream</h2>
+		</div>
+		<h1 class="text-3xl font-bold mb-4 text-primary">You searched for "Rice"</h1>
+		<div class="flex overflow-x-auto space-x-10">
+			<div class="bg-card p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 min-w-[150px]">
+				<img src="Dawat.png" alt="Dawat Basmati Rice" class="w-full h-32 object-cover mb-2 rounded" />
+				<h3 class="font-semibold text-black">DAWAT Basmati Rice</h3>
+				<p class="text-muted-foreground">2Kg, <br>Light and Fluffy, distinct flavor</p>
+				<p class="font-bold text-primary">$12</p>
+				<button class="bg-accent text-accent-foreground hover:bg-accent/80 mt-2 p-2 rounded transition">ADD
+					+</button>
+				<div class="flex items-center mt-2">
+					<span class="text-yellow-500">⭐⭐⭐⭐⭐</span>
+				</div>
+			</div>
+			<div class="bg-card p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 min-w-[150px]">
+				<img src="Minute.png" alt="Minute White Rice" class="w-full h-32 object-cover mb-2 rounded" />
+				<h3 class="font-semibold text-black">Minute White Rice</h3>
+				<p class="text-muted-foreground">1Kg,<br> Long-grain and aromatic rice</p>
+				<p class="font-bold text-primary">$16</p>
+				<button class="bg-accent text-accent-foreground hover:bg-accent/80 mt-2 p-2 rounded transition">ADD
+					+</button>
+				<div class="flex items-center mt-2">
+					<span class="text-yellow-500">⭐⭐⭐</span>
+				</div>
+			</div>
+			<div class="bg-card p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 min-w-[150px]">
+				<img src="Kohinoor.png" alt="Kohinoor Basmati Rice" class="w-full h-32 object-cover mb-2 rounded" />
+				<h3 class="font-semibold text-black">Kohinoor Basmati Rice</h3>
+				<p class="text-muted-foreground">1Kg, <br>Fragrant, slightly sticky long-grain rice</p>
+				<p class="font-bold text-primary">$11</p>
+				<button class="bg-accent text-accent-foreground hover:bg-accent/80 mt-2 p-2 rounded transition">ADD
+					+</button>
+				<div class="flex items-center mt-2">
+					<span class="text-yellow-500">⭐⭐⭐⭐</span>
+				</div>
+			</div>
+			<div class="bg-card p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 min-w-[150px]">
+				<img src="River.png" alt="River White Rice" class="w-full h-32 object-cover mb-2 rounded" />
+				<h3 class="font-semibold text-black">River White Rice</h3>
+				<p class="text-muted-foreground">2Kg,<br> Nutty flavor, and higher fiber content</p>
+				<p class="font-bold text-primary">$15</p>
+				<button class="bg-accent text-accent-foreground hover:bg-accent/80 mt-2 p-2 rounded transition">ADD
+					+</button>
+				<div class="flex items-center mt-2">
+					<span class="text-yellow-500">⭐⭐⭐⭐</span>
+				</div>
+			</div>
+		</div>
+
+
+		<h1 class="text-3xl font-bold mb-4 text-primary">You searched for "Tea"</h1>
+		<div class="flex overflow-x-auto space-x-10">
+			<div class="bg-card p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 min-w-[150px]">
+				<img src="tata.png" alt="Tata Tea Gold" class="w-full h-32 object-cover mb-2 rounded" />
+				<h3 class="font-semibold text-black">Tata Tea Gold</h3>
+				<p class="text-muted-foreground">1Kg,<br> Rich and strong flavour</p>
+				<p class="font-bold text-primary">$12</p>
+				<button
+					class="bg-accent text-accent-foreground hover:bg-accent/80 mt-2 p-2 rounded transition">ADD+</button>
+				<div class="flex items-center mt-2">
+					<span class="text-yellow-500">⭐⭐⭐⭐</span>
+				</div>
+			</div>
+			<div class="bg-card p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 min-w-[150px]">
+				<img src="tetley.png" alt="Tetly Green Tea" class="w-full h-32 object-cover mb-2 rounded" />
+				<h3 class="font-semibold text-black">Tetly Green Tea</h3>
+				<p class="text-muted-foreground">1Kg,<br> Refreshing taste and health benefits</p>
+				<p class="font-bold text-primary">$16</p>
+				<button class="bg-accent text-accent-foreground hover:bg-accent/80 mt-2 p-2 rounded transition">ADD
+					+</button>
+				<div class="flex items-center mt-2">
+					<span class="text-yellow-500">⭐⭐⭐⭐</span>
+				</div>
+			</div>
+			<div class="bg-card p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 min-w-[150px]">
+				<img src="society.png" alt="Society Tea" class="w-full h-32 object-cover mb-2 rounded" />
+				<h3 class="font-semibold text-black">Society Tea</h3>
+				<p class="text-muted-foreground">500g, <br>Strong and aromatic tea</p>
+				<p class="font-bold text-primary">$11</p>
+				<button class="bg-accent text-accent-foreground hover:bg-accent/80 mt-2 p-2 rounded transition">ADD
+					+</button>
+				<div class="flex items-center mt-2">
+					<span class="text-yellow-500">⭐⭐⭐⭐</span>
+				</div>
+			</div>
+			<div class="bg-card p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 min-w-[150px]">
+				<img src="waghBakri.png" alt="River White Rice" class="w-full h-32 object-cover mb-2 rounded" />
+				<h3 class="font-semibold text-black">Wagh Bakri</h3>
+				<p class="text-muted-foreground">2Kg,<br> Robust and full-bodied flavour</p>
+				<p class="font-bold text-primary">$15</p>
+				<button class="bg-accent text-accent-foreground hover:bg-accent/80 mt-2 p-2 rounded transition">ADD
+					+</button>
+				<div class="flex items-center mt-2">
+					<span class="text-yellow-500">⭐⭐⭐⭐</span>
+				</div>
+			</div>
+
+		</div>
+
+		<h1 class="text-3xl font-bold mb-4 text-primary">You searched for "Biscuits"</h1>
+		<div class="flex overflow-x-auto space-x-10">
+			<div class="bg-card p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 min-w-[150px]">
+				<img src="parle.png" alt="Parle-G" class="w-full h-32 object-cover mb-2 rounded" />
+				<h3 class="font-semibold text-black">Parle-G</h3>
+				<p class="text-muted-foreground">100g,<br> affordable price and energy boost</p>
+				<p class="font-bold text-primary">$2</p>
+				<button class="bg-accent text-accent-foreground hover:bg-accent/80 mt-2 p-2 rounded transition">ADD
+					+</button>
+				<div class="flex items-center mt-2">
+					<span class="text-yellow-500">⭐⭐⭐⭐</span>
+				</div>
+			</div>
+			<div class="bg-card p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 min-w-[150px]">
+				<img src="marie.png" alt="Britannia Marie Gold" class="w-full h-32 object-cover mb-2 rounded" />
+				<h3 class="font-semibold text-black">Britannia Marie Gold</h3>
+				<p class="text-muted-foreground">200Kg, <br>Light, Tea time biscuits</p>
+				<p class="font-bold text-primary">$1.7</p>
+				<button class="bg-accent text-accent-foreground hover:bg-accent/80 mt-2 p-2 rounded transition">ADD
+					+</button>
+				<div class="flex items-center mt-2">
+					<span class="text-yellow-500">⭐⭐⭐⭐</span>
+				</div>
+			</div>
+			<div class="bg-card p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 min-w-[150px]">
+				<img src="sunfeast.png" alt="Sun Feast Digestive Biscuits"
+					class="w-full h-32 object-cover mb-2 rounded" />
+				<h3 class="font-semibold text-black">Sun Feast Digestive Biscuits</h3>
+				<p class="text-muted-foreground">100g,<br> whole wheat digestive biscuits</p>
+				<p class="font-bold text-primary">$2</p>
+				<button class="bg-accent text-accent-foreground hover:bg-accent/80 mt-2 p-2 rounded transition">ADD
+					+</button>
+				<div class="flex items-center mt-2">
+					<span class="text-yellow-500">⭐⭐⭐⭐</span>
+				</div>
+			</div>
+			<div class="bg-card p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 min-w-[150px]">
+				<img src="bourbon.png" alt="Bourbon" class="w-full h-32 object-cover mb-2 rounded" />
+				<h3 class="font-semibold text-black">Bourbon</h3>
+				<p class="text-muted-foreground">100g,<br> Cream-filled chocolate biscuits</p>
+				<p class="font-bold text-primary">$1.5</p>
+				<button class="bg-accent text-accent-foreground hover:bg-accent/80 mt-2 p-2 rounded transition">ADD
+					+</button>
+				<div class="flex items-center mt-2">
+					<span class="text-yellow-500">⭐⭐⭐⭐</span>
+				</div>
+			</div>
+
+		</div>
+
+		<h1 class="text-3xl font-bold mb-4 text-primary">You searched for "Hand Cream"</h1>
+		<div class="flex overflow-x-auto space-x-10">
+			<div class="bg-card p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 min-w-[150px]">
+				<img src="nivea.png" alt="Nivea" class="w-full h-32 object-cover mb-2 rounded" />
+				<h3 class="font-semibold text-black">Nivea</h3>
+				<p class="text-muted-foreground"> 50ml,<br> lightweight & contain shea butter </p>
+				<p class="font-bold text-primary">$2</p>
+				<button class="bg-accent text-accent-foreground hover:bg-accent/80 mt-2 p-2 rounded transition">ADD
+					+</button>
+				<div class="flex items-center mt-2">
+					<span class="text-yellow-500">⭐⭐⭐⭐</span>
+				</div>
+			</div>
+			<div class="bg-card p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 min-w-[150px]">
+				<img src="himalaya.png" alt="Himalaya" class="w-full h-32 object-cover mb-2 rounded" />
+				<h3 class="font-semibold text-black">Himalaya</h3>
+				<p class="text-muted-foreground">50g,<br> nourishing cream with cocoa butter</p>
+				<p class="font-bold text-primary">$1.9</p>
+				<button class="bg-accent text-accent-foreground hover:bg-accent/80 mt-2 p-2 rounded transition">ADD
+					+</button>
+				<div class="flex items-center mt-2">
+					<span class="text-yellow-500">⭐⭐⭐</span>
+				</div>
+			</div>
+			<div class="bg-card p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 min-w-[150px]">
+				<img src="theBodyShop.png" alt="The Body Shop" class="w-full h-32 object-cover mb-2 rounded" />
+				<h3 class="font-semibold text-black">The Body Shop</h3>
+				<p class="text-muted-foreground">50ml,<br> Light-weight and non-greasy formula</p>
+				<p class="font-bold text-primary">$4</p>
+				<button class="bg-accent text-accent-foreground hover:bg-accent/80 mt-2 p-2 rounded transition">ADD
+					+</button>
+				<div class="flex items-center mt-2">
+					<span class="text-yellow-500">⭐⭐⭐⭐</span>
+				</div>
+			</div>
+			<div class="bg-card p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 min-w-[150px]">
+				<img src="vaseline.png" alt="Vaseline" class="w-full h-32 object-cover mb-2 rounded" />
+				<h3 class="font-semibold text-black">Vaseline</h3>
+				<p class="text-muted-foreground">100ml,<br> Dual action cream & Light-weight</p>
+				<p class="font-bold text-primary">$5</p>
+				<button class="bg-accent text-accent-foreground hover:bg-accent/80 mt-2 p-2 rounded transition">ADD
+					+</button>
+				<div class="flex items-center mt-2">
+					<span class="text-yellow-500">⭐⭐⭐</span>
+				</div>
+			</div>
+
+		</div>
+
+
+
+
+	</div>
+
+
+</body>
+
+</html>
