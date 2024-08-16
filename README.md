@@ -8,3 +8,7 @@ This project is designed to tackle these pain points head-on. By integrating adv
 The result? A highly personalized, efficient, and engaging shopping experience that fosters long-term loyalty, drives sustainable growth, and ensures Walmart remains a leader in the competitive e-commerce market.
 ![image](https://github.com/user-attachments/assets/80fb7131-8046-447f-9631-1ff44f90714e)
 
+![image](https://github.com/user-attachments/assets/b55331c3-7bd7-4de5-a490-f5ea02a2b2d5)
+
+![image](https://github.com/user-attachments/assets/181d802a-4ac0-4dc6-95d5-e6c146c47457)
+
